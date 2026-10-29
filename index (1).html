@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Roopa K | AI, ML & Embedded Systems</title>
+<meta name="description" content="Portfolio of Roopa K, final-year B.Tech Computer Science student at SRMIST. Research intern at IISc, working on machine learning, NLP, computer vision and IoT." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f2f7f5; --panel:#ffffff; --ink:#10201d; --muted:#53655f; --line:#d9e5e0;
+  --accent:#0f766e; --accent-soft:#dcf2ee; --accent-ink:#ffffff;
+  --radius:16px;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#0b1412;--panel:#122019;--ink:#e8f3ef;--muted:#92a8a1;--line:#1f342d;--accent:#5eead4;--accent-soft:#12312b;--accent-ink:#06201b}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.1}
+
+.layout{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:300px 1fr;gap:64px}
+
+/* sidebar */
+aside{position:sticky;top:0;align-self:start;height:100vh;padding:56px 0;display:flex;flex-direction:column;gap:26px}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:2.4rem;overflow:hidden;border:1px solid var(--line)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+aside h1{font-size:2.4rem}
+.tagline{color:var(--muted);font-size:.98rem;margin-top:10px}
+.loc{color:var(--muted);font-size:.88rem;margin-top:6px}
+nav{display:flex;flex-direction:column;gap:2px;margin-top:6px}
+nav a{text-decoration:none;color:var(--muted);font-size:.93rem;padding:7px 0;border-left:2px solid var(--line);padding-left:14px;transition:.15s}
+nav a:hover,nav a.on{color:var(--ink);border-left-color:var(--accent)}
+.contact{margin-top:auto;display:flex;flex-direction:column;gap:8px;font-size:.9rem}
+.contact a{text-decoration:none;color:var(--muted)}
+.contact a:hover{color:var(--accent)}
+.btn{display:inline-block;text-align:center;background:var(--accent);color:var(--accent-ink)!important;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.9rem;text-decoration:none}
+
+/* main */
+main{padding:56px 0 40px}
+section{padding:0 0 64px}
+h2{font-size:1.7rem;margin-bottom:24px}
+.lead{font-size:1.15rem;color:var(--ink);max-width:62ch}
+.lead em{font-style:normal;font-weight:700;color:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.fact b{display:block;font-weight:800;font-size:1.7rem;color:var(--accent);line-height:1.1}
+.fact span{font-size:.84rem;color:var(--muted)}
+
+.entry{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+.entry-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 18px;margin-bottom:10px}
+.entry h3{font-size:1.08rem;font-weight:600;line-height:1.3}
+.entry .sub{color:var(--accent);font-size:.9rem;font-weight:500}
+.entry .when{color:var(--muted);font-size:.86rem;white-space:nowrap}
+.entry ul{padding-left:18px;color:var(--muted);font-size:.94rem}
+.entry li{margin:5px 0}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
+.tag{font-size:.76rem;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:3px 11px;border-radius:999px}
+.pub{border-left:4px solid var(--accent)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.proj{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}
+.proj:hover{transform:translateY(-3px);border-color:var(--accent)}
+.proj h3{font-size:1.02rem;font-weight:600;line-height:1.3}
+.proj p{color:var(--muted);font-size:.9rem;flex:1}
+.proj .yr{font-size:.8rem;color:var(--muted)}
+
+.skillrow{display:grid;grid-template-columns:150px 1fr;gap:10px 20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.skillrow:last-child{border-bottom:0}
+.skillrow h3{font-size:.9rem;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:.84rem;background:var(--panel);border:1px solid var(--line);padding:3px 12px;border-radius:999px}
+
+.certs{list-style:none;display:grid;gap:0}
+.certs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.certs li span{color:var(--muted);font-size:.86rem;white-space:nowrap}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.84rem}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:40px 0 8px}
+  nav{flex-direction:row;flex-wrap:wrap;gap:6px 18px}
+  nav a{border-left:0;padding:4px 0}
+  .contact{margin-top:6px}
+  main{padding-top:32px}
+  .grid2,.facts{grid-template-columns:1fr}
+  .skillrow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside>
+  <div class="avatar" id="avatar">RK</div>
+  <div>
+    <h1>Roopa K</h1>
+    <p class="tagline">Computer Science student building with machine learning, computer vision and IoT.</p>
+    <p class="loc">Chennai, Tamil Nadu</p>
+  </div>
+  <nav id="nav">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#more">Education &amp; more</a>
+  </nav>
+  <div class="contact">
+    <a class="btn" href="mailto:roopa192004@gmail.com">Say hello</a>
+    <a href="mailto:roopa192004@gmail.com">roopa192004@gmail.com</a>
+    <a id="gh" href="#" target="_blank" rel="noopener">GitHub</a>
+    <a id="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead">I'm a final-year B.Tech Computer Science student at SRM Institute of Science and Technology. I work across <em>machine learning, computer vision, NLP and IoT</em>, and like projects where a model has to run on real hardware or answer real questions. I've done research at IISc, published a conference paper on an AI legal assistant, and I enjoy teamwork and clear problem-solving.</p>
+    <div class="facts">
+      <div class="fact"><b>8.98</b><span>CGPA, B.Tech CSE</span></div>
+      <div class="fact"><b>95%+</b><span>accuracy on embedded TinyML models</span></div>
+      <div class="fact"><b>IISc</b><span>Research intern, Bangalore</span></div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <article class="entry pub">
+      <div class="entry-head">
+        <div><h3>JusticeLink AI: Intelligent Legal Knowledge Retrieval and Assistance System</h3><div class="sub">Conference paper</div></div>
+        <div class="when">2026</div>
+      </div>
+      <ul>
+        <li>Published and presented a paper on an AI-powered multilingual legal assistant.</li>
+        <li>Proposed a legal assistance system that combines NLP, OCR and machine learning.</li>
+        <li>Presented the methodology, implementation and findings to faculty and technical reviewers.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <article class="entry">
+      <div class="entry-head">
+        <div><h3>Research Intern</h3><div class="sub">Indian Institute of Science (IISc), Bangalore</div></div>
+        <div class="when">Jun – Jul 2024</div>
+      </div>
+      <ul>
+        <li>Worked under Dr. T. Venkata Prabhakar, Chief Research Scientist.</li>
+        <li>Built gesture recognition and object detection systems on Arduino Nano 33 BLE Sense and Nicla Vision.</li>
+        <li>Implemented IoT models through Edge Impulse with over 95% accuracy.</li>
+        <li>Hands-on work in sensor integration, data processing and embedded deployment.</li>
+      </ul>
+    </article>
+    <article class="entry">
+      <div class="entry-head">
+        <div><h3>Web Development Intern</h3><div class="sub">CodSoft · Remote</div></div>
+        <div class="when">Jun – Jul 2024</div>
+      </div>
+      <ul>
+        <li>Built responsive web applications with HTML and CSS.</li>
+        <li>Ensured cross-browser compatibility and consistent layout behaviour.</li>
+        <li>Applied front-end best practices.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid2">
+      <article class="proj">
+        <div class="yr">2026</div><h3>JusticeLink AI</h3>
+        <p>AI legal information system for multilingual query processing and retrieval. Combines NLP, OCR and generative AI with classification models to return structured, context-aware answers from legal documents and Q&amp;A datasets.</p>
+        <div class="tags"><span class="tag">NLP</span><span class="tag">OCR</span><span class="tag">ML</span><span class="tag">GenAI</span></div>
+      </article>
+      <article class="proj">
+        <div class="yr">2025 · IISc research project</div><h3>Gesture Recognition &amp; Object Detection</h3>
+        <p>Real-time gesture recognition on Arduino Nano 33 BLE Sense and an object detection model on Nicla Vision. TinyML models trained and deployed with Edge Impulse at over 95% accuracy.</p>
+        <div class="tags"><span class="tag">TinyML</span><span class="tag">Edge Impulse</span><span class="tag">Arduino</span></div>
+      </article>
+      <article class="proj">
+        <div class="yr">2024</div><h3>IoT Smart Pet Feeder</h3>
+        <p>Automated feeder with scheduled food and water dispensing, a weight sensor, RTC scheduling and a web interface that shows feeding schedules and consumption.</p>
+        <div class="tags"><span class="tag">IoT</span><span class="tag">Microcontroller</span><span class="tag">Web</span></div>
+      </article>
+      <article class="proj">
+        <div class="yr">2024</div><h3>Paddle Your Energy</h3>
+        <p>Self-powered energy harvesting design using piezoelectric disks under floor tiles to turn footsteps and vibrations into stored electricity for basic device charging.</p>
+        <div class="tags"><span class="tag">Energy harvesting</span><span class="tag">Piezoelectric</span></div>
+      </article>
+      <article class="proj" style="grid-column:1/-1">
+        <div class="yr">2025</div><h3>AR/VR &amp; 3D Modelling</h3>
+        <p>An immersive VR Haunted House in Unity with interactive gameplay, dynamic lighting and sound, plus a detailed 3D Liver Cirrhosis model in Blender that shows the stages of the disease for educational and medical awareness.</p>
+        <div class="tags"><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">VR</span><span class="tag">3D modelling</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="github" hidden>
+    <h2>Latest on GitHub</h2>
+    <div class="grid2" id="repos"></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div>
+      <div class="skillrow"><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">SQL</span></div></div>
+      <div class="skillrow"><h3>Core concepts</h3><div class="chips"><span class="chip">Data structures &amp; algorithms</span><span class="chip">Object-oriented programming</span></div></div>
+      <div class="skillrow"><h3>AI &amp; data</h3><div class="chips"><span class="chip">Machine learning</span><span class="chip">NLP</span><span class="chip">Computer vision</span><span class="chip">IoT</span></div></div>
+      <div class="skillrow"><h3>Tools</h3><div class="chips"><span class="chip">Edge Impulse</span><span class="chip">Arduino IDE</span><span class="chip">VS Code</span><span class="chip">Blender</span><span class="chip">Unity</span></div></div>
+    </div>
+  </section>
+
+  <section id="more">
+    <h2>Education</h2>
+    <article class="entry">
+      <div class="entry-head">
+        <div><h3>B.Tech, Computer Science</h3><div class="sub">SRM Institute of Science and Technology</div></div>
+        <div class="when">Aug 2023 – May 2027</div>
+      </div>
+      <ul><li>CGPA: 8.98</li></ul>
+    </article>
+
+    <h2 style="margin-top:44px">Certifications</h2>
+    <ul class="certs">
+      <li>Introduction to Machine Learning, NPTEL <span>Nov 2025</span></li>
+      <li>DBMS: Master the Fundamentals and Advanced Concepts, Scaler <span>Apr 2025</span></li>
+      <li>Machine Learning with Python, IBM <span>Jun 2024</span></li>
+      <li>Java Programming, NPTEL <span>Nov 2024</span></li>
+      <li>Advanced C++ Programming, Udemy <span>Apr 2024</span></li>
+      <li>C Programming for Beginners, Udemy <span>Nov 2023</span></li>
+    </ul>
+
+    <h2 style="margin-top:44px">Leadership</h2>
+    <article class="entry">
+      <div class="entry-head"><div><h3>Associate Lead, Creatives</h3><div class="sub">SRMIST SQAC Club, Creative Team</div></div></div>
+      <ul>
+        <li>Designed and developed creative content for club events and initiatives.</li>
+        <li>Led visual and conceptual planning for posters, presentations and digital assets.</li>
+        <li>Worked with the team to grow the club's outreach through engaging media.</li>
+      </ul>
+    </article>
+    <article class="entry">
+      <div class="entry-head"><div><h3>Convener</h3><div class="sub">SRMIST, Directorate of Student Affairs</div></div></div>
+      <ul>
+        <li>Led and coordinated student committee activities.</li>
+        <li>Took part in technical discussions, events and workshops.</li>
+        <li>Engaged with industry professionals for networking and career development.</li>
+        <li>Contributed to planning that improved student participation and skill growth.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer>© <span id="yr"></span> Roopa K</footer>
+</main>
+</div>
+
+<script>
+/* ====== EDIT THESE ====== */
+const GITHUB_USER = "";   // e.g. "roopa-k"  (leave empty to hide GitHub)
+const LINKEDIN_URL = "";  // e.g. "https://www.linkedin.com/in/your-handle"
+/* ======================== */
+
+const gh=document.getElementById("gh"), li=document.getElementById("li");
+if(GITHUB_USER) gh.href="https://github.com/"+GITHUB_USER; else gh.style.display="none";
+if(LINKEDIN_URL) li.href=LINKEDIN_URL; else li.style.display="none";
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* optional photo: add photo.jpg next to index.html */
+const img=new Image(); img.alt="Photo of Roopa K";
+img.onload=()=>{const a=document.getElementById("avatar");a.textContent="";a.appendChild(img)};
+img.src="photo.jpg";
+
+/* active nav link */
+const links=[...document.querySelectorAll("#nav a")];
+const secs=links.map(a=>document.querySelector(a.getAttribute("href")));
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id))}
+}),{rootMargin:"-30% 0px -60% 0px"});
+secs.forEach(s=>s&&io.observe(s));
+
+/* live GitHub repos */
+if(GITHUB_USER){
+  fetch("https://api.github.com/users/"+encodeURIComponent(GITHUB_USER)+"/repos?sort=updated&per_page=30")
+    .then(r=>r.ok?r.json():Promise.reject())
+    .then(list=>{
+      const repos=list.filter(r=>!r.fork&&!r.name.toLowerCase().endsWith(".github.io")).slice(0,4);
+      if(!repos.length) return;
+      const box=document.getElementById("repos");
+      repos.forEach(r=>{
+        const a=document.createElement("a");a.className="proj";a.href=r.html_url;a.target="_blank";a.rel="noopener";a.style.textDecoration="none";
+        const y=document.createElement("div");y.className="yr";y.textContent=r.language||"";
+        const h=document.createElement("h3");h.textContent=r.name;
+        const p=document.createElement("p");p.textContent=r.description||"No description yet.";
+        a.append(y,h,p);box.appendChild(a);
+      });
+      document.getElementById("github").hidden=false;
+    }).catch(()=>{});
+}
+</script>
+</body>
+</html>
